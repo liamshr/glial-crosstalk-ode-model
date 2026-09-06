@@ -34,7 +34,7 @@ Neuronal damage (D) is driven primarily by M1 microglia and their cytokine produ
 
 ## Model Schematic
 
-[**Insert model schematic diagram here**]
+[**Model schematic diagram**]
 
 ## Mathematical Model
 
