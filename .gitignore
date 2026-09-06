@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+ode_full_output.csv
+figures/*.pdf

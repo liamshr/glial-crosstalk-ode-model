@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glial-crosstalk-ode"
+version = "0.1.0"
+description = "Microglia-astroglia neuroinflammation and neuronal-damage ODE model"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "scipy>=1.9", "matplotlib>=3.6", "jupyter>=1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
