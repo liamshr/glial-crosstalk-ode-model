@@ -1,44 +1,44 @@
-# Glial Crosstalk and Neuroinflammation: A Qualitative ODE Model
+# Qualitative ODE model of ROS Driven Glial crosstalk and Neuroinflammation
 
 ## Overview
 
-This repository contains a qualitative, dimensionless model of neuroinflammatory dynamics following acute brain injury or insult. The model captures macroscopic interactions between microglial polarization states and astrocytic phenotypes in response to reactive oxygen species (ROS), with feedback mechanisms controlling neuronal damage and tissue repair.
+This repository contains a qualitative, dimensionless model of neuroinflammatory dynamics following acute brain injury or inflammatory insult. The model captures macroscopic cellular interactions between microglial and astrocytic inflammatory polarization states in response to reactive oxygen species (ROS).
 
-Rather than attempting to capture molecular-scale details, this model operates at the population level: tracking the balance between pro-inflammatory M1 microglia (amplifying damage) and reparative M2 microglia (promoting recovery), alongside the recruitment and phenotypic switching of astrocytes between quiescent (Aq) and reactive (Ap) states. The interplay of these glial populations, their cytokine outputs, and ROS-dependent feedback determines whether the system resolves inflammation or transitions to chronic neurodegeneration.
+This model, rather than attempting to capture molecular-scale details of the feedback mechanisms, operates at the population level, tracking the balance between pro-inflammatory M1 microglia (amplifying damage) and anti-inflammatory M2 microglia (promoting recovery), within a relative threshold of reasonable pro-inflammatory reactions, alongside the recruitment of astrocytes between quiescent (Aq) and reactive pro-inflammatory (Ap) states. The interplay of these glial populations, their cytokine outputs, and ROS-dependent feedback determines whether the system resolves to normalized inflammation levels or transitions to chronic neurodegeneration.
 
 ## Biological Mechanisms
 
 ### Neuroinflammation and Glial Activation
 
-Following CNS injury, resident microglia rapidly respond to danger signals, becoming activated and polarizing into distinct phenotypes. **M1 microglia** (classical/pro-inflammatory activation) produce pro-inflammatory cytokines IL-1β and IL-12, amplify ROS production, and drive neuronal damage. In contrast, **M2 microglia** (alternative/reparative activation) produce anti-inflammatory cytokines IL-4 and IL-10, which suppress M1 activity and promote tissue repair.
+Following injury in the central nervous system, microglia rapidly respond to signals of cellular threat, activating and polarizing into distinct phenotypes. **M1 microglia** produce pro-inflammatory cytokines such as IL-1β and IL-12, which amplify ROS production, and drive neuronal damage. Contrastingly, **M2 microglia** produce anti-inflammatory cytokines IL-4 and IL-10, which suppress M1 activity and promote tissue repair.
 
-This polarization is not fixed: M1 microglia can be converted to M2 phenotype through exposure to anti-inflammatory signals (IL-4, IL-10), and this switch is a critical point of intervention in many therapeutic strategies.
+This polarization is dynamic as M1 microglia can be converted to the M2 phenotype through exposure to anti-inflammatory signals (IL-4 and IL-10 cytokines), and vice versa.
 
 ### Astrocytic Phenotype Switching
 
-Astrocytes exist in dynamic equilibrium between a quiescent state (Aq) and a reactive/proliferating state (Ap). **Quiescent astrocytes** maintain the resting brain environment, providing metabolic support and promoting M2 microglial recruitment. **Reactive astrocytes** respond to damage signals (M1 cytokines, ROS, physical disruption), proliferate, and can amplify inflammation by recruiting additional M1 microglia—a positive feedback loop that can drive pathology if unchecked.
+Astrocytes exist dynamically between a quiescent state (Aq) and a reactive/proliferating state (Ap), more in line with the pro-inflammatory state of microglia. **Quiescent astrocytes** maintain the resting brain environment, providing metabolic support for neurons and promoting M2 microglial polarization. **Reactive astrocytes** respond to damage signals (M1 cytokines, ROS, physical disruption), proliferate, and can amplify inflammation by recruiting additional M1 microglia. This key interaction between glial cells, although built on basic support mechanisms, can create a positive feedback loop that can drive disease progression.
 
-This phenotypic plasticity means that even in the same injury context, the balance of astrocytic states shapes whether inflammation resolves or persists.
+Because astrocytes are so adaptable, the ratio of astrocytic functional stress determines whether tissue inflammation resolves or becomes chronic after an injury.
 
 ### ROS-Dependent Polarization
 
-A key feature of this model is the **ROS-dependent control of microglial polarization**. Elevated ROS biases microglia toward M1 activation and away from M2 development. This creates a critical bifurcation: 
+A key feature of this model is the **ROS-dependent control of microglial polarization**. Elevated ROS biases microglia toward M1 activation and away from M2 development. This creates a critical bifurcation in the system: 
 - **Low ROS scenarios** allow M2 microglia to accumulate and resolve inflammation.
-- **High ROS scenarios** lock microglia into M1 phenotype, perpetuating damage and preventing recovery.
+- **High ROS scenarios** polarize microglia into M1 phenotype, sustaining damage and preventing recovery.
 
-This mechanism captures a central observation in neuroinflammatory biology: the same injury signal, interpreted through the lens of oxidative stress, determines whether the outcome is recovery or chronic neurodegeneration.
+This mechanism reflects a central observation in neuroinflammatory biology: the same injury signal can lead to either recovery or chronic neurodegeneration, depending on how it is shaped by oxidative stress (specific in this model to the initialized level).
 
 ### Neuronal Damage and Resolution
 
-Neuronal damage (D) is driven primarily by M1 microglia and their cytokine products (IL-1β, IL-12), modulated by anti-inflammatory signals (IL-10) through Hill-function inhibition. Damage is resolved through microglial killing (M1 and M2 clearance) and astrocyte-mediated repair (promoted by Aq, suppressed by Ap). This balance defines the critical window for intervention: damage control is most effective when M2 recruitment and Aq-mediated repair can outpace M1-driven injury.
+Neuronal damage (D) is driven primarily by M1 microglia and their cytokine products (IL-1β, IL-12), while being moderated by anti-inflammatory signals (IL-10) through Hill-function inhibition. Damage is resolved through microglial-mediated clearance by both M1 and M2 microglia, along with astrocyte-mediated repair (promoted by Aq and suppressed by Ap). This balance defines a critical window for therapeutic intervention: damage control is most effective when M2 recruitment and Aq-mediated repair are able to offset M1-driven injury.
 
 ## Model Schematic
 
-[**Insert model schematic diagram here** — showing microglial polarization states (M1 ↔ M2), astrocytic phenotypes (Aq ↔ Ap), cytokines (IL-1β, IL-12, IL-10, IL-4), ROS feedback, and damage dynamics (D).]
+[**Insert model schematic diagram here**]
 
 ## Mathematical Model
 
-The model state vector is **Y** = (M₁, M₂, IL-1β, IL-12, IL-10, IL-4, Aq, Ap, D), representing macroscopic populations of pro-inflammatory and reparative microglia, four cytokines, two astrocytic phenotypes, and accumulated neuronal damage.
+The model state vector is **Y** = (M₁, M₂, IL-1β, IL-12, IL-10, IL-4, Aq, Ap, D), representing macroscopic populations of pro-inflammatory and anti-inflammatory microglia, four cytokines, two astrocytic phenotypes, and accumulated neuronal damage.
 
 ### System of ODEs
 
