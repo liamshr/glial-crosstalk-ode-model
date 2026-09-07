@@ -98,8 +98,8 @@ python scripts/generate_figures.py
 
 This produces high-resolution PNG and PDF figures for model trajectories at constant
 ROS inputs of 0.00, 0.01, 31.62, and 100000.00, the ROS sensitivity analysis,
-and the standalone Euler microglial polarization simulation. The generation script
-does not produce phase portraits.
+and the standalone Euler microglial polarization simulation at the same four ROS
+inputs. The generation script does not produce phase portraits.
 
 ### Interactive Exploration
 

@@ -15,15 +15,15 @@ OUT = ROOT / "figures"
 ROS_VALUES = (0.00, 0.01, 31.62, 100000.00)
 
 
-def save_euler_figure(output):
-    """Save the standalone Euler microglial polarization example."""
-    time, m1_trace, m2_trace = run_euler_simulation()
+def save_euler_figure(ros, output):
+    """Save a standalone Euler microglial polarization example."""
+    time, m1_trace, m2_trace = run_euler_simulation(ros=ros)
     figure, ax = plt.subplots(figsize=(8, 4), constrained_layout=True)
     ax.plot(time, m1_trace, label="M1 (pro-inflammatory)")
     ax.plot(time, m2_trace, label="M2 (anti-inflammatory)")
     ax.set_xlabel("Time (arbitrary units)")
     ax.set_ylabel("Concentration (arbitrary units)")
-    ax.set_title("Euler simulation of microglial polarization (ROS=2.0)")
+    ax.set_title(f"Euler simulation of microglial polarization (ROS={ros:.2f})")
     ax.legend(frameon=False)
     figure.savefig(output, dpi=300, bbox_inches="tight")
     return figure
@@ -50,9 +50,12 @@ def main():
         )
         plt.close(figure)
 
-    for suffix in ("png", "pdf"):
-        figure = save_euler_figure(OUT / f"euler_microglial_polarization.{suffix}")
-        plt.close(figure)
+    for ros in ROS_VALUES:
+        for suffix in ("png", "pdf"):
+            figure = save_euler_figure(
+                ros, OUT / f"euler_ros_{ros:.2f}_microglial_polarization.{suffix}"
+            )
+            plt.close(figure)
 
     plt.close("all")
 
