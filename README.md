@@ -131,7 +131,7 @@ glial-crosstalk-ode-model/
 └── pyproject.toml
 ```
 
-## Model Origin and Attribution
+## Model Attributions
 
 The mathematical framework implemented in this repository is based primarily on the models developed by **Vaughan et al. (2018)** and **Puri et al. (2010)**. The present implementation adapts and extends these formulations to investigate how ROS-dependent microglial polarization and feedback between microglial and astrocytic phenotypes influence the progression of neuroinflammation and neurodegeneration following acute brain injury or inflammatory insult.
 
