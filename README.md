@@ -107,7 +107,10 @@ inputs. The generation script does not produce phase portraits.
 jupyter lab
 ```
 
-Open `notebooks/model_walkthrough.ipynb` for a commented baseline simulation, bifurcation analysis as ROS varies, and a walkthrough of the model logic. The original analysis notebook (`notebooks/model_walkthrough_original.ipynb`) is saved for reference.
+Open `notebooks/model_walkthrough.ipynb` for a commented baseline simulation,
+bifurcation analysis as ROS varies, and a walkthrough of the model logic. The
+updated original analysis notebook (`notebooks/model_walkthrough_original.ipynb`)
+is also included for reference and reproduces the underlying exploratory analysis.
 
 ## Repository Structure
 
@@ -121,7 +124,8 @@ glial-crosstalk-ode-model/
 │       └── plotting.py
 ├── scripts/
 │   ├── euler_microglial_polarization.py
-│   └── generate_figures.py
+│   ├── generate_figures.py
+│   └── sensitivity_analysis.py
 ├── notebooks/
 │   ├── model_walkthrough.ipynb
 │   └── model_walkthrough_original.ipynb
