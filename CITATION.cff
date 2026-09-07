@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Qualitative ODE Model of ROS Driven Glial Crosstalk and Neuroinflammation"
+version: "0.1.0"
+date-released: "2026-09-07"
+authors:
+  - family-names: "Shure"
+    given-names: "Liam"
+    website: "https://github.com/liamshr"
+repository-code: "https://github.com/liamshr/glial-crosstalk-ode-model"
+license: "MIT"
+keywords:
+  - "ODE model"
+  - "neuroinflammation"
+  - "microglia"
+  - "astroglia"
+  - "reactive oxygen species"
