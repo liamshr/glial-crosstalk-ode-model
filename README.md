@@ -134,7 +134,7 @@ While the primary equations and underlying biological mechanisms are derived fro
 
 Parameters from the underlying microglia based equations in the neuroinflammatory model were selected using the ranges and biological constraints reported by Vaughan et al. (2018). Where parameters were provided as ranges, the midpoint was used as the baseline value to provide a reproducible nominal parameter set. Parameters introduced for astrocyte-mediated interactions were assigned temporary values based on qualitative biological relationships and the intended relative timescales of the modeled processes. The overall simulations were robust and for a large amount of parameters, only changed when parameters were shifted drastically. These parameters are treated as modeling assumptions rather than experimentally validated estimates. Parameter sensitivity for the modeling goal was subsequently evaluated to assess their influence on model behavior.
 
-## Future Work
+## Future Research and Alternate Directions
 
 This model builds on classical frameworks of glial activation and extends them with explicit ROS-dependent feedback. Future directions include:
 - Validation against multi-photon imaging data of glial dynamics in vivo.
