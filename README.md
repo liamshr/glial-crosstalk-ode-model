@@ -160,5 +160,7 @@ Puri, I. K., & Li, L. (2010). Mathematical model for the pathogenesis of Alzheim
 
 ## License
 
+Copyright (c) 2026 Liam Shure.
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file
 for the complete license text.
