@@ -140,7 +140,12 @@ This model builds on classical frameworks of glial activation and extends them w
 - Validation against multi-photon imaging data of glial dynamics in vivo.
 - Extension to spatial PDEs to capture local vs. systemic inflammatory gradients.
 - Extension to Probabilistic SDEs to account for molecular noise and cellular heterogeneity found in neuroinflammatory environments. SDEs would help model biological variability, bistability, and the random thresholds that trigger chronic glial hyperactivation.
-- Integration of additional damage pathways (excitotoxicity, metabolic failure).
+
+## References
+
+Vaughan, L. E., Ranganathan, P. R., Kumar, R. G., Wagner, A. K., & Rubin, J. E. (2018). A mathematical model of neuroinflammation in severe clinical traumatic brain injury. Journal of Neuroinflammation, 15(1). https://doi.org/10.1186/s12974-018-1384-1
+
+Puri, I. K., & Li, L. (2010). Mathematical model for the pathogenesis of Alzheimer’s disease. PLOS ONE, 5(12), e15176. https://doi.org/10.1371/journal.pone.0015176
 
 ---
 
