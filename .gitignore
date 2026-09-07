@@ -5,3 +5,12 @@ __pycache__/
 .ipynb_checkpoints/
 ode_full_output.csv
 figures/*.pdf
+
+# Local environment and credential files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
