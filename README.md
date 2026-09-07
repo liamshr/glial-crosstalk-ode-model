@@ -73,9 +73,9 @@ Where:
 
 All parameters are dimensionless and chosen to reflect qualitative biological relationships rather than exact molecular concentrations. Default values (including baseline ROS = 100) are stored in `src/glial_crosstalk/parameters.py`. The model is designed to be:
 
-- **Robust to perturbations in parameter space** — the qualitative behavior (recovery vs. chronic inflammation) persists across reasonable parameter variations.
-- **Interpretable at macroscopic scales** — state variables represent glial populations and accumulated damage, not molecular events.
-- **Tunable for exploration** — users can modify parameters to explore how variations in microglial recruitment, astrocytic response, or ROS levels shift outcomes.
+- **Robust to parameter changes** — the model generally maintains the same recovery or chronic-inflammation behavior across reasonable changes in parameter values.
+- **Interpretable at the population level** — the state variables describe glial populations, cytokine levels, and accumulated tissue damage rather than individual molecular interactions.
+- **Designed for exploration** — parameters can be adjusted to examine how changes in microglial recruitment, astrocyte activation, or ROS exposure affect model outcomes.
 
 ## Quick Start
 
