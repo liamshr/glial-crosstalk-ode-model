@@ -96,7 +96,10 @@ python -m pip install -e .
 python scripts/generate_figures.py
 ```
 
-This produces figures including phase portraits, time-course simulations at varying ROS levels, and comparisons of damage trajectories under different intervention scenarios.
+This produces high-resolution PNG and PDF figures for model trajectories at constant
+ROS inputs of 0.00, 0.01, 31.62, and 100000.00, the ROS sensitivity analysis,
+and the standalone Euler microglial polarization simulation. The generation script
+does not produce phase portraits.
 
 ### Interactive Exploration
 
@@ -122,12 +125,7 @@ glial-crosstalk-ode-model/
 ├── notebooks/
 │   ├── model_walkthrough.ipynb
 │   └── model_walkthrough_original.ipynb
-├── figures/
-│   ├── baseline_M1_D_phase_portrait.png
-│   ├── baseline_trajectories.png
-│   ├── ros_0_M1_D_phase_portrait.png
-│   ├── ros_1_M1_D_phase_portrait.png
-│   └── ros_100_M1_D_phase_portrait.png
+├── figures/                 # generated trajectory, sensitivity, and Euler figures
 ├── README.md
 └── pyproject.toml
 ```

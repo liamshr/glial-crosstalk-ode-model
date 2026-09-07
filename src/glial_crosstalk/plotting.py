@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from .core import STATE_NAMES, rates
 
 
-def trajectory_figure(solution, output=None, *, dpi=300):
+def trajectory_figure(solution, output=None, *, title=None, dpi=300):
     """Plot all biological groups and auxiliary recruitment rates."""
     fig, axes = plt.subplots(4, 1, figsize=(9, 12), sharex=True, constrained_layout=True)
     groups = [
@@ -23,6 +23,9 @@ def trajectory_figure(solution, output=None, *, dpi=300):
         ax.set_title(title)
         ax.legend(ncol=len(names), frameon=False)
     axes[-1].set_xlabel("Time (a.u.)")
+    if title is not None:
+        fig.suptitle(title)
+        fig.set_constrained_layout_pads(h_pad=0.25)
     return _save_or_return(fig, output, dpi)
 
 
