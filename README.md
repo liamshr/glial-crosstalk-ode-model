@@ -112,14 +112,22 @@ Open `notebooks/model_walkthrough.ipynb` for a commented baseline simulation, bi
 glial-crosstalk-ode-model/
 ├── src/
 │   └── glial_crosstalk/
+│       ├── __init__.py
 │       ├── core.py
-│       ├── rates.py
-│       └── parameters.py
+│       ├── parameters.py
+│       └── plotting.py
 ├── scripts/
+│   ├── euler_microglial_polarization.py
 │   └── generate_figures.py
 ├── notebooks/
 │   ├── model_walkthrough.ipynb
-│   └── model_original_notebook.ipynb
+│   └── model_walkthrough_original.ipynb
+├── figures/
+│   ├── baseline_M1_D_phase_portrait.png
+│   ├── baseline_trajectories.png
+│   ├── ros_0_M1_D_phase_portrait.png
+│   ├── ros_1_M1_D_phase_portrait.png
+│   └── ros_100_M1_D_phase_portrait.png
 ├── README.md
 └── pyproject.toml
 ```
