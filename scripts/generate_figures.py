@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Generate reproducible publication figures for the model."""
 
 from pathlib import Path
