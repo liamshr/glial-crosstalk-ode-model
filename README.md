@@ -126,7 +126,9 @@ glial-crosstalk-ode-model/
 ├── notebooks/
 │   ├── model_walkthrough.ipynb
 │   └── model_walkthrough_original.ipynb
-├── figures/                 # generated trajectory, sensitivity, and Euler figures
+├── figures/                 # generated PNG/PDF trajectory, sensitivity, and Euler figures
+├── CITATION.cff
+├── LICENSE
 ├── README.md
 └── pyproject.toml
 ```
