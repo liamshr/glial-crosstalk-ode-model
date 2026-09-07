@@ -1,4 +1,4 @@
-# Qualitative ODE Model of ROS Driven Glial crosstalk and Neuroinflammation
+# Qualitative ODE Model of ROS Driven Glial Crosstalk and Neuroinflammation
 
 ## Overview
 
