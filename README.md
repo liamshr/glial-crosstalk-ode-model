@@ -28,7 +28,7 @@ A key feature of this model is the **ROS-dependent control of microglial polariz
 
 This mechanism reflects a central observation in neuroinflammatory biology: the same injury signal can lead to either recovery or chronic neurodegeneration, depending on how it is shaped by oxidative stress (specific in this model to the initialized level).
 
-### Neuronal Damage and Resolution
+### Neuronal Damage
 
 Neuronal damage (D) is driven primarily by M1 microglia and their cytokine products (IL-1β, IL-12), while being moderated by anti-inflammatory signals (IL-10) through Hill-function inhibition. Damage is resolved through microglial-mediated clearance by both M1 and M2 microglia, along with astrocyte-mediated repair (promoted by Aq and suppressed by Ap). This balance defines a critical window for therapeutic intervention: damage control is most effective when M2 recruitment and Aq-mediated repair are able to offset M1-driven injury.
 
@@ -38,7 +38,7 @@ Neuronal damage (D) is driven primarily by M1 microglia and their cytokine produ
 
 ## Mathematical Model
 
-The model state vector is **Y** = (M₁, M₂, IL-1β, IL-12, IL-10, IL-4, Aq, Ap, D), representing macroscopic populations of pro-inflammatory and anti-inflammatory microglia, four cytokines, two astrocytic phenotypes, and accumulated neuronal damage.
+The model state vector is Y = ((M_1, M_2, \mathrm{IL}\text{-}1\beta, \mathrm{IL}\text{-}12, \mathrm{IL}\text{-}10, \mathrm{IL}\text{-}4, A_q, A_p, D)), representing the macroscopic populations of pro- and anti-inflammatory microglia ((M_1) and (M_2)), pro- and anti-inflammatory cytokines ((\mathrm{IL}\text{-}1\beta), (\mathrm{IL}\text{-}12), (\mathrm{IL}\text{-}10), and (\mathrm{IL}\text{-}4)), pro- and anti-inflammatory astrocytic phenotypes ((A_p) and (A_q)), and accumulated neuronal damage ((D)).
 
 ### System of ODEs
 
@@ -92,7 +92,7 @@ python -m pip install -e .
 python scripts/generate_figures.py
 ```
 
-This produces publication-quality figures including phase portraits, time-course simulations at varying ROS levels, and comparisons of damage trajectories under different intervention scenarios.
+This produces figures including phase portraits, time-course simulations at varying ROS levels, and comparisons of damage trajectories under different intervention scenarios.
 
 ### Interactive Exploration
 
@@ -100,29 +100,42 @@ This produces publication-quality figures including phase portraits, time-course
 jupyter lab
 ```
 
-Open `notebooks/model_walkthrough.ipynb` for a commented baseline simulation, bifurcation analysis as ROS varies, and a walkthrough of the model logic. The original analysis notebook (`notebooks/model_walkthrough_original.ipynb`) is preserved unchanged for reference.
+Open `notebooks/model_walkthrough.ipynb` for a commented baseline simulation, bifurcation analysis as ROS varies, and a walkthrough of the model logic. The original analysis notebook (`notebooks/model_walkthrough_original.ipynb`) is saved for reference.
 
 ## Repository Structure
 
 ```
 glial-crosstalk-ode-model/
-├── src/glial_crosstalk/
-│   ├── core.py              # ODE system definition
-│   ├── rates.py             # Hill functions and auxiliary dynamics
-│   └── parameters.py        # Default parameter values
+├── src/
+│   └── glial_crosstalk/
+│       ├── core.py
+│       ├── rates.py
+│       └── parameters.py
 ├── scripts/
-│   └── generate_figures.py  # Publication figure generation
+│   └── generate_figures.py
 ├── notebooks/
-│   ├── model_walkthrough.ipynb        # Annotated analysis
-│   └── model_walkthrough_original.ipynb # Original reference
-└── README.md
+│   ├── model_walkthrough.ipynb
+│   └── model_original_notebook.ipynb
+├── README.md
+└── pyproject.toml
 ```
 
-## References and Future Work
+## Model Origin and Attribution
+
+The mathematical framework implemented in this repository is based primarily on the models developed by **Vaughan et al. (2018)** and **Puri et al. (2010)**. The present implementation adapts and extends these formulations to investigate how ROS-dependent microglial polarization and feedback between microglial and astrocytic phenotypes influence the progression of neuroinflammation and neurodegeneration following acute brain injury or inflammatory insult.
+
+While the primary equations and underlying biological mechanisms are derived from these published models, several terms and parameterizations have been modified to reflect the goals and assumptions of the present model. In particular, the model extends the underlying framework by incorporating astrocyte–microglia crosstalk and associated feedback mechanisms, as well as the direct incorporation of ROS as a discrete independent input. The resulting system is presented as an independent implementation and extension of the referenced frameworks.
+
+## Parameterization
+
+Parameters from the underlying microglia based equations in the neuroinflammatory model were selected using the ranges and biological constraints reported by Vaughan et al. (2018). Where parameters were provided as ranges, the midpoint was used as the baseline value to provide a reproducible nominal parameter set. Parameters introduced for astrocyte-mediated interactions were assigned temporary values based on qualitative biological relationships and the intended relative timescales of the modeled processes. The overall simulations were robust and for a large amount of parameters, only changed when parameters were shifted drastically. These parameters are treated as modeling assumptions rather than experimentally validated estimates. Parameter sensitivity for the modeling goal was subsequently evaluated to assess their influence on model behavior.
+
+## Future Work
 
 This model builds on classical frameworks of glial activation and extends them with explicit ROS-dependent feedback. Future directions include:
 - Validation against multi-photon imaging data of glial dynamics in vivo.
 - Extension to spatial PDEs to capture local vs. systemic inflammatory gradients.
+- Extension to Probabilistic SDEs to account for molecular noise and cellular heterogeneity found in neuroinflammatory environments. SDEs would help model biological variability, bistability, and the random thresholds that trigger chronic glial hyperactivation.
 - Integration of additional damage pathways (excitotoxicity, metabolic failure).
 
 ---
