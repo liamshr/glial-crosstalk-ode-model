@@ -178,7 +178,7 @@ def plot_sensitivity(relative_change, min_effective, saturation_ros, output=None
     plt.legend()
     plt.tight_layout()
     if output is not None:
-        figure.savefig(output, dpi=200)
+        figure.savefig(output, dpi=300, bbox_inches="tight")
     return figure
 
 
