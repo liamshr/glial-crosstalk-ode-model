@@ -121,7 +121,8 @@ glial-crosstalk-ode-model/
 │       └── plotting.py
 ├── scripts/
 │   ├── euler_microglial_polarization.py
-│   └── generate_figures.py
+│   ├── generate_figures.py
+│   └── sensitivity_analysis.py
 ├── notebooks/
 │   ├── model_walkthrough.ipynb
 │   └── model_walkthrough_original.ipynb
