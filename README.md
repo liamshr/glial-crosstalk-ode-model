@@ -38,7 +38,11 @@ Neuronal damage (D) is driven primarily by M1 microglia and their cytokine produ
 
 ## Mathematical Model
 
-The model state vector is Y = ((M_1, M_2, \mathrm{IL}\text{-}1\beta, \mathrm{IL}\text{-}12, \mathrm{IL}\text{-}10, \mathrm{IL}\text{-}4, A_q, A_p, D)), representing the macroscopic populations of pro- and anti-inflammatory microglia ((M_1) and (M_2)), pro- and anti-inflammatory cytokines ((\mathrm{IL}\text{-}1\beta), (\mathrm{IL}\text{-}12), (\mathrm{IL}\text{-}10), and (\mathrm{IL}\text{-}4)), pro- and anti-inflammatory astrocytic phenotypes ((A_p) and (A_q)), and accumulated neuronal damage ((D)).
+The model state vector is $Y = [M_1, M_2, \text{IL-1}\beta, \text{IL-12}, \text{IL-10}, \text{IL-4}, A_q, A_p, D]^T$, representing the macroscopic populations of:
+* **Pro- and anti-inflammatory microglia**: $M_1$ and $M_2$
+* **Pro- and anti-inflammatory cytokines**: $\text{IL-1}\beta$, $\text{IL-12}$, $\text{IL-10}$, and $\text{IL-4}$
+* **Pro- and anti-inflammatory astrocytic phenotypes**: $A_p$ and $A_q$
+* **Accumulated neuronal damage**: $D$
 
 ### System of ODEs
 
